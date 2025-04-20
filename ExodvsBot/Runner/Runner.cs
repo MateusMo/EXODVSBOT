@@ -142,14 +142,14 @@ namespace ExodvsBot.Runner
                 }
                 else if (decisao == "Sell" && ocorrencia.Executou)
                 {
-                    if (settings.txtTelegramChatId.Any())
+                    if (settings.txtTelegramChatId.Any() && ocorrencia.Executou)
                     {
                         await TelegramSender.SendMessage(settings.txtTelegramToken, settings.txtTelegramChatId, $"Selling 🤑. UsdtBallance {ocorrencia.SaldoUsdt.ToString("0.00")}");
                     }
 
                     decision = "Sell Position";
                 }
-                else if (decisao == "Buy" && ocorrencia.Executou)
+                else if (decisao == "Buy" && ocorrencia.Executou && ocorrencia.Executou)
                 {
                     if (settings.txtTelegramChatId.Any())
                     {
